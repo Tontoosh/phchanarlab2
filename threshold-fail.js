@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
-// Intentionally strict demonstration threshold; 50 ms is far below the 289.66 ms baseline.
+// Intentionally strict demonstration threshold; 50 ms is far below the 291.09 ms baseline.
 export const options = {
   vus: 5,
   duration: '30s',

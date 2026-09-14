@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
-// Baseline p95: 289.66 ms; SLO is baseline * 1.5 = 434.49 ms.
+// Current baseline p95: 291.09 ms; SLO is 436.64 ms. This run uses the slightly stricter 434.49 ms gate.
 export const options = {
   vus: 5,
   duration: '30s',
