@@ -31,8 +31,8 @@ k6 v2.1.0 (commit/83a87a41e2, go1.26.4, linux/amd64)
 
 | Тест | Latency threshold | Error threshold | Үр дүн |
 |---|---:|---:|---|
-| SLO PASS | p(95) < 436.64 ms | rate < 0.01 | PASS; run-д 434.49 ms-ийн арай хатуу босго хэрэглэж, p95 = 305.11 ms гарсан |
-| Санаатай хатуу FAIL | p(95) < 50 ms | rate < 0.01 | FAIL; p95 = 298.50 ms, error rate = 0.00% |
+| SLO PASS (30 VU / 1 минут) | p(95) < 436.64 ms | rate < 0.01 | PASS; p95 = 226.63 ms, error rate = 0.00% |
+| Санаатай хатуу FAIL (30 VU / 1 минут) | p(95) < 50 ms | rate < 0.01 | FAIL; p95 = 227.81 ms, error rate = 0.00% |
 
 Threshold-тэй хоёр тусдаа скриптийн бүтэн гаралт `results/threshold-pass.txt`, `results/threshold-fail.txt` файлд байна. FAIL тест нь санаатайгаар хатуу босготой, зөвхөн чанарын gate хэрхэн ажилладгийг харуулах зориулалттай.
 
@@ -49,8 +49,8 @@ _Дүгнэлт (9 өгүүлбэр):_
 5. Ачаалал нэмэгдэхэд throughput 7.40-өөс 147.27 хүсэлт/сек хүртэл өссөн бөгөөд p95 latency baseline-тэй ойролцоо байв.
 6. Эдгээр хэмжилтээр 100 VU хүртэл нэг хэрэглэгчийн туршлага мэдэгдэхүйц муудах цэг ажиглагдсангүй.
 7. Гурван тусдаа туршилт болон stages туршилтад error rate 0% байж, status 200 шалгалтууд амжилттай өнгөрөв.
-8. Baseline p95-ийн 1.5 дахин босго буюу 436.64 ms latency SLO-г тогтоосон; арай хатуу 434.49 ms босготой 30 секундийн шалгалт p95=305.11 ms гарган PASS болсон.
-9. 50 ms хатуу босготой тест 298.50 ms p95 хэмжээд FAIL болж, threshold чанарын gate болж ажилладгийг харуулав.
+8. Baseline p95-ийн 1.5 дахин босго буюу 436.64 ms latency SLO-г тогтоосон; 30 VU / 1 минутын PASS шалгалтад p95 = 226.63 ms, error rate = 0.00% гарсан.
+9. 30 VU / 1 минутын тестэд 50 ms хатуу босго хэрэглэж, p95 = 227.81 ms хэмжсэнээр FAIL болж, threshold чанарын gate болж ажилладгийг харуулав.
 
 ## Үр дүнгийн файлууд
 
@@ -59,7 +59,7 @@ _Дүгнэлт (9 өгүүлбэр):_
 - [100 VU бүрэн k6 гаралт](results/run-100vu.txt)
 - [Stages өсгөх/буулгах туршилтын бүрэн гаралт](results/run-stages.txt)
 - [SLO PASS гаралт](results/threshold-pass.txt) болон [хатуу SLO FAIL гаралт](results/threshold-fail.txt)
-- Summary screenshot-ууд: [5 VU](results/vue5-2.png), [30 VU](results/vue30-2.png), [100 VU](results/vue100-2.png), [stages](results/runstage-2.png), [SLO PASS](results/thresholdpass-2.png), [SLO FAIL](results/thresholdfail-2.png)
+- Summary screenshot-ууд: [5 VU](results/vue5-2.png), [30 VU](results/vue30-2.png), [100 VU](results/vue100-2.png), [stages](results/runstage-2.png), [SLO PASS](results/thresholdpassvue30-2.png), [SLO FAIL](results/failvue30-1m-2.png)
 
 ## Ажиллуулах командууд
 
