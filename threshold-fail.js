@@ -3,8 +3,8 @@ import { check, sleep } from 'k6';
 
 // Intentionally strict demonstration threshold; 50 ms is far below the 291.09 ms baseline.
 export const options = {
-  vus: 5,
-  duration: '30s',
+  vus: 30,
+  duration: '60s',
   thresholds: {
     http_req_duration: ['p(95)<50'],
     http_req_failed: ['rate<0.01'],

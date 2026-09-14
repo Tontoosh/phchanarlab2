@@ -3,8 +3,8 @@ import { check, sleep } from 'k6';
 
 // Current baseline p95: 291.09 ms; SLO is 436.64 ms. This run uses the slightly stricter 434.49 ms gate.
 export const options = {
-  vus: 5,
-  duration: '30s',
+  vus: 30,
+  duration: '60s',
   thresholds: {
     http_req_duration: ['p(95)<434.49'],
     http_req_failed: ['rate<0.01'],
